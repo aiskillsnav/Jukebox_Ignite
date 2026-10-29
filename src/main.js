@@ -199,11 +199,11 @@ function renderWelcome() {
       </div>
       <div class="welcome-copy">
         <p class="eyebrow">Your next skill is on deck</p>
-        <h1>Build your AI learning mix.</h1>
-        <p>Pick four tracks. We’ll press a personalized playlist for the work you want to move forward.</p>
+        <h1>Build your AI learning playlist.</h1>
+        <p>Pick four tracks. In less than 60 seconds we’ll press a personalized playlist for the work you want to move forward.</p>
       </div>
       <button class="primary-button" id="start-button" type="button">Drop the needle ${icon('arrow-right')}</button>
-      <p class="touch-hint">Tap to begin · About 60 seconds</p>
+      <p class="touch-hint">Pick four tracks. In less than 60 seconds we’ll press a personalized playlist for the work you want to move forward.</p>
     </section>`)
   document.querySelector('#start-button').addEventListener('click', () => {
     recordMetric('activations')
@@ -272,7 +272,7 @@ async function renderResult(result) {
   const remix = steps[3].options.find(([value]) => value === answers.remix)?.[1]
   renderShell(`
     <section class="screen result-screen">
-      <div class="now-playing">${icon('headphones')} Now Playing: Your AI Learning Mix</div>
+      <div class="now-playing">${icon('headphones')} Now Playing: Your AI Learning Playlist</div>
       <div class="result-layout">
         <div class="album-sleeve accent-${result.accent}">
           <span class="album-label">Skills Quest · Ignite 2026</span>
@@ -282,7 +282,6 @@ async function renderResult(result) {
           <div class="album-number">SQ-${String(Object.keys(mixes).indexOf(result.key) + 1).padStart(2, '0')}</div>
         </div>
         <div class="result-copy">
-          <p class="eyebrow">Your headliner</p>
           <h1>${result.title}</h1>
           <p>${result.description}</p>
           <div class="result-tags"><span>${tempo}</span><span>${remix}</span></div>
